@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json -w",
-    "start": "nodemon dist/index.js"
+    "start": "nodemon dist/server.js",
+    "devStart": "nodemon dist/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^4.7.1",
     "fastify": "^4.10.2",
     "prisma": "^4.7.1"
   },

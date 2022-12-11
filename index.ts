@@ -13,17 +13,10 @@ interface IReply {
   body: any;
 }
 
-app.get<{ Querystring: IQuery; Headers: IHeaders }>("/", (req, reply) => {
-  const { username, password } = req.query;
-  return reply.send({
-    code: 200,
-    message: "succse",
-    body: {
-      username,
-      password,
-    },
-  });
+app.get("/", (req, reply) => {
+  return "hello seng seng";
 });
+
 app.listen({ port: 3000 }, (err, add) => {
   if (err) {
     app.log.error(err);

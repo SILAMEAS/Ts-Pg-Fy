@@ -6,15 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fastify_1 = __importDefault(require("fastify"));
 const app = (0, fastify_1.default)();
 app.get("/", (req, reply) => {
-    const { username, password } = req.query;
-    return reply.send({
-        code: 200,
-        message: "succse",
-        body: {
-            username,
-            password,
-        },
-    });
+    return "hello seng seng";
 });
 app.listen({ port: 3000 }, (err, add) => {
     if (err) {
@@ -22,3 +14,4 @@ app.listen({ port: 3000 }, (err, add) => {
     }
     console.log("server running on port" + add);
 });
+//# sourceMappingURL=index.js.map
