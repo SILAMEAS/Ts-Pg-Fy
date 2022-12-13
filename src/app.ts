@@ -1,9 +1,15 @@
 import fastify, { FastifyInstance } from "fastify";
 import userRoute from "./routes/user.route";
-const app: FastifyInstance = fastify();
+const app: FastifyInstance = fastify({
+  pluginTimeout: 20000,
+});
 
 async function main() {
-  app.register(userRoute, { prefix: "/user" });
+  const prefix = "/api/v1";
+  // server.addContentTypeParser('text/json', { parseAs: 'string' }, server.getDefaultJsonParser('ignore', 'ignore'))
+
+  userRoute(app, prefix);
+  // app.register(userRoute, { prefix: "/user" });
   // -----------------------------Port running
   await app.listen({ port: 3001 }, (err, add) => {
     if (err) {

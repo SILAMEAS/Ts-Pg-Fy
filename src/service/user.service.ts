@@ -1,5 +1,5 @@
-import prisma from "utils/prisma";
+// import prisma from "utils/prisma";
 
-export async function create(input) {
-  const user = await prisma.user.findMany();
-}
+// export async function create(input) {
+//   const user = await prisma.user.findMany();
+// }
